@@ -37,9 +37,7 @@ class BrandController extends Controller
 
     public function show (Brand $brand, $id){
         $brand = Brand::find($id);
-        return view ('Brand/updatebrand', [
-            'brand' => $brand,
-        ]);
+        return view ('Brand/updatebrand', ['brand' => $brand,]);
     }
 
     public function update (Request $request, Brand $brand){

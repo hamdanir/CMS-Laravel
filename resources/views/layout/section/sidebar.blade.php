@@ -41,6 +41,18 @@
                                 <p class="warna">Type</p>
                             </a>
                         </li>
+                        <li class="nav-item  @yield('Sub-menu-3')" style="display: block" id="SubMenu3">
+                            <a href="{{ url('/product') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p class="warna">Produk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item  @yield('Sub-menu-4')" style="display: block" id="SubMenu4">
+                            <a href="{{ url('/user') }}" class="nav-link">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p class="warna">User</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

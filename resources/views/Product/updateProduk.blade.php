@@ -13,7 +13,7 @@ CMS Laravel
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-bold" style="font-size: 26px;">Create Type</h1>
+                <h1 class="m-0 text-bold" style="font-size: 26px;">Update Product</h1>
             </div>
             <!--<div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -33,39 +33,67 @@ CMS Laravel
 <section class="content">
     <div class="row">
         <div class="col-md-12">
+
             <div class="panel panel-success">
                 <div class="panel-body">
-                    <form method="post" action="{{ route('types.store') }}">
-                        @csrf
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label class="form-label bold" >Name</label>
-                                    <input ID="InputPosition" Class="form-control" name="nameType">
+                    
+                    <div>
+                        <form method="POST" action="{{ url('edit-product-proses')}}">
+                            @csrf
+                            @method('PUT')
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12 d-flex justify-content-center">
+                                        <img src="{{ $dataProduct->images[4]}}" alt="foto" class="w-50 h-200">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label bold">Brand</label>
-                            <select name="brand_id" class="form-control">
-                                @foreach($brands as $brand)
-                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <br />
-                        <button ID="ButtonOK" Class="btn btn-success btn-sm" >Add New</button>
-                        <a href="{{ url('types') }}">
-                            <button class="btn btn-danger btn-sm" type="button">Cancel</button>
-                        </a>
-                        
-                    </form>
+                            <div class="col-md-12"> 
+                                <div class="form-group">
+                                    <div class="row ">
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <img src="{{ $dataProduct->thumbnail}}" alt="" class="w-50 h-150">
+                                            
+                                                <h5  name="rating" id="rating" value="{{ $dataProduct->rating }}">Rating : {{ $dataProduct->rating }}</h5>
+                                            
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class=" row ">
+                                                <div class="col-md-6">
+                                                    <label class="form-label bold" for="nameType">Name</label>
+                                                    <input name="titleProduct" id="titleProduct" class="form-control" value="{{ $dataProduct->title}}">
+                                                    <input name="productId" type="hidden" value="{{ $dataProduct->id }}">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label bold" for="nameType">Price</label>
+                                                    <input name="price" type="number" id="price" class="form-control" value="{{ $dataProduct->price }}">
+                                                    <input name="price" type="hidden" value="{{ $dataProduct->id }}">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="form-label bold" for="nameType">Description</label>
+                                                <textarea name="descriptionProduct" type="textarea" id="descriptionProduct" class="form-control" value="{{ $dataProduct->description }}" cols="30" rows="10">{{ $dataProduct->description }}</textarea>
+                                                <input name="productDescription" type="hidden" value="{{ $dataProduct->id }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <br />
+                            <button class="btn btn-success btn-sm" type="submit">Save</button>
+                            <a href="#">
+                                <button class="btn btn-danger btn-sm" type="button">Cancel</button>
+                            </a>
+                        </form>
+                    </div>
                     
                 </div>
             </div>
         </div>
     </div>
-
 </section>
 
 

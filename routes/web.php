@@ -42,3 +42,9 @@ use Illuminate\Support\Facades\Route;
     Route::get('/updateTypes/{id}', 'TypeController@show');
     Route::put('/updateTypes/{id}', 'TypeController@update')->name('types.update');
     Route::get('/deleteTypes/{id}', 'TypeController@delete');
+
+    Route::get('/product', 'ProductController@index');
+    Route::get('/updateProduct/{id}', 'ProductController@show');
+    Route::put('edit-product-proses', 'ProductController@update');
+
+    Route::get('/user', 'UserController@index');

@@ -40,7 +40,8 @@ CMS Laravel
                                     <th>Code Type</th>
                                     <th>Type</th>
                                     <th>Code Brand</th>
-                                    <th>Brand</th>
+                                    <th>Brand tb_Brand</th>
+                                    <th>Brand tb_Type</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -51,6 +52,7 @@ CMS Laravel
                                     <th>{{ $type->nameType}}</th>
                                     <th>{{ $type->codeBrand }}</th>
                                     <th>{{ $type->nameBrand }}</th>
+                                    <th>{{ $type->brand->name }}</th>
                                     <th>
                                         <a href="{{ url('/updateTypes/'.$type->id) }}" class="btn btn-warning">
                                             <i class="fa fa-edit"></i>

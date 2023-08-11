@@ -9,7 +9,8 @@ use App\Models\Brand;
 class TypeController extends Controller
 {
     public function index (){
-        $datatype = Type::all();
+        $datatype = Type::with('Brand')->get();
+        // dd($datatype);
         return view('Type.type', [
             'datatype' => $datatype,
             'no' => 1 // Add this line to initialize $no
@@ -59,7 +60,7 @@ class TypeController extends Controller
     return redirect()->route('types.index');
     }
 
-    public function delete(Type $type, $id){
+    public function delete( $id){
         $type = Type::destroy($id);
         return redirect('/types');
     }
