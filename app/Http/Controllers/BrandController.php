@@ -9,10 +9,7 @@ class BrandController extends Controller
 {
     public function index (){
         $databrand = Brand::all();
-        return view('Brand.brand', [
-            'databrand' => $databrand,
-            'no' => 1 // Add this line to initialize $no
-        ]);
+        return view('Brand.brand', ['databrand' => $databrand,'no' => 1 ]);
     }
 
     public function create (){

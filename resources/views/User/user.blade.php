@@ -38,11 +38,11 @@ CMS Laravel
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Avatar</th>
                                     <th>Nama</th>
                                     <th>Username</th>
                                     <th>Address</th>
-                                    <th>Gender</th>
-                                    {{-- <th>Images</th> --}}
+                                    
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -50,15 +50,13 @@ CMS Laravel
                                 @foreach ($dataUser as $user)
                                 <tr>
                                     <th>{{ $no++}}</th>
-                                    {{-- <th>{{ $product['title']}}</th>
-                                    <th>{{ $product['price']}}</th>
-                                    <th>{{ $product['stock']}}</th>
-                                    <th>{{ $product['rating']}}</th> --}}
+                                    <th>
+                                        <img src="{{ $user->avatar}}" alt="" class="w-25 h-25">
+                                    </th>
                                     <th>{{ $user->name}}</th>
                                     <th>{{ $user->username}}</th>
                                     <th>{{ $user->address}}</th>
-                                    <th>{{ $user->gender }}</th>
-                                    {{-- <th><img src="{{ $product['thumbnail']}}" alt="" class="w-25 h-25"></th> --}}
+                                    
                                     <th>
                                         <a href="#" class="btn btn-warning">
                                             <i class="fa fa-edit"></i>

@@ -23,10 +23,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = $this->guzzle->get('https://6417e63dcc5fd8ffb1791cf6.mockapi.io/users');
+        $dataUser = $this->guzzle->get('https://6417e63dcc5fd8ffb1791cf6.mockapi.io/users');
         // $data = Guzzle::get('https://dummyjson.com/products', 'limit=10');
-        dd($data);
-        return view('User.user', ['dataUser' => $data->users, 'no'=>1,]);
+        // dd($dataUser);
+        return view('User.user', ['dataUser' => $dataUser, 'no'=>1,]);
     }
 
     /**

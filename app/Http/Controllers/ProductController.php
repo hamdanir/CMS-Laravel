@@ -49,6 +49,7 @@ class ProductController extends Controller
         // $data = Guzzle::get('https://dummyjson.com/products', 'limit=10');
         // dd($data);
         return view('Product.product', ['dataProduct' => $data->products, 'no'=>1,]);
+            
     }
 
     /**

@@ -58,7 +58,6 @@ CMS Laravel
                                     <th>{{ $product->price}}</th>
                                     <th>{{ $product->stock}}</th>
                                     <th>{{ $product->rating }}</th>
-                                    {{-- <th><img src="{{ $product['thumbnail']}}" alt="" class="w-25 h-25"></th> --}}
                                     <th>
                                         <a href="{{ url('/updateProduct/'.$product->id) }}" class="btn btn-warning">
                                             <i class="fa fa-edit"></i>
