@@ -31,7 +31,7 @@ CMS Laravel
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="{{ url('/createProducts') }}">
                             <button class="btn btn-primary mb-3">Tambah +</button>
                         </a>
                         <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -63,7 +63,7 @@ CMS Laravel
                                         <a href="{{ url('/updateProduct/'.$product->id) }}" class="btn btn-warning">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="# " class="btn btn-danger">
+                                        <a href="{{ url('/deleteProducts/', $product->id)  }} " onclick="return confirm('Apakah yakin Akan menghapus {{ $product->title}} ?')" class="btn btn-danger">
                                             <i class="fa fa-trash"></i></a>
                                     </th>
                                     

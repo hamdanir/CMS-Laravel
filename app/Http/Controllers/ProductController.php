@@ -58,8 +58,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+    $categories = $this->guzzle->get('https://dummyjson.com/products/categories');
+    // dd($response); 
+    return view('Product/createProduk', ['categories' => $categories]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -69,7 +72,20 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        $body = [
+            'title' => $request->titleproduct,
+            'price' => $request->priceproduct,
+            'description' => $request->descrition,
+            'stock' => $request->stockproduct,
+            'category' => $request->category
+        ];
+    
+        
+        $product = $this->guzzle->post('https://dummyjson.com/products/add', $body);
+    
+        dd($product);
+        return redirect()->route('products.index');
     }
 
     /**
@@ -124,6 +140,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $product = $this->guzzle->del('https://dummyjson.com/products/'.$id);
+        dd($product);
+            
     }
 }

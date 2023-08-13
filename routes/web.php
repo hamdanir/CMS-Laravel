@@ -46,5 +46,8 @@ use Illuminate\Support\Facades\Route;
     Route::get('/product', 'ProductController@index');
     Route::get('/updateProduct/{id}', 'ProductController@show');
     Route::put('edit-product-proses', 'ProductController@update');
-
+    Route::get('/createProducts', 'ProductController@create');
+    Route::post('/product', 'ProductController@store')->name('product.store');
+    Route::delete('/deleteProducts/{id}', 'ProductController@destroy');
+    
     Route::get('/user', 'UserController@index');
