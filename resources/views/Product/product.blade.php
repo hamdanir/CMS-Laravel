@@ -63,7 +63,7 @@ CMS Laravel
                                         <a href="{{ url('/updateProduct/'.$product->id) }}" class="btn btn-warning">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="{{ url('/deleteProducts/', $product->id)  }} " onclick="return confirm('Apakah yakin Akan menghapus {{ $product->title}} ?')" class="btn btn-danger">
+                                        <a href="{{ url('/deleteProducts/'.$product->id)  }} " onclick="return confirm('Apakah yakin Akan menghapus {{ $product->title}} ?')" class="btn btn-danger">
                                             <i class="fa fa-trash"></i></a>
                                     </th>
                                     

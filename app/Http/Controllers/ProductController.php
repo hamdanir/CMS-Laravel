@@ -141,8 +141,16 @@ class ProductController extends Controller
     public function destroy($id)
     {
         
-        $product = $this->guzzle->del('https://dummyjson.com/products/'.$id);
-        dd($product);
+        //
             
+    }
+
+    public function delete($id)
+    {
+        $body = [
+            'id',
+        ];
+        $deleteProduct = $this->guzzle->del('https://dummyjson.com/products/'.$id, $body);
+        dd($deleteProduct);
     }
 }
